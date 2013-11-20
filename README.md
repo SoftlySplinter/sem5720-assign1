@@ -15,7 +15,9 @@ Your report should include references to appropriate sources.
 The "2000 word" report size is for themain text and does not include the words in the bibliography citing references.
 
 ## Topic Area
-**"Rapid Growth in the number of Top Level Domains in the Domain Name System"You should address whatever issues you deem appropriate."**
+**"Rapid Growth in the number of Top Level Domains in the Domain Name System"**
+
+You should address whatever issues you deem appropriate.
 
 However, at minimum, your answer should addressthe issues itemized below.
 
@@ -26,11 +28,11 @@ However, at minimum, your answer should addressthe issues itemized below.
 ## Initial Bibliography
 As mentioned above, you are expected to read widely in your study of this topic. However, to give you a startingpoint we draw the following article to your attention.
 
-Manning, B (December 2011) Challenges to DNS ScalingInternet Protocol Journal,14(4).
+Manning, B (December 2011) Challenges to DNS Scaling Internet Protocol Journal, 14(4).
 
 This is also available at http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_14-4/144_dns.html
 
-The complete copy of the December 2011 Internet Protocol Journal can be located at http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_14-4/ipj_14-4.pdf and its index is athttp://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_14-4/index.html
+The complete copy of the December 2011 Internet Protocol Journal can be located at http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_14-4/ipj_14-4.pdf and its index is at http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_14-4/index.html
 
 ## Effort Allocated to this Assignment
 You are likely to need to spend between sixteen and thirty hours of your time to complete this assignment.

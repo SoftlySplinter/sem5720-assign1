@@ -1,44 +1,44 @@
 # SEM5720 Assignment 1
 
-> David Price, Neal Snooke and Stephen Kingston
+> David Price, Nitin Naik and Stephen Kingston
 >
 > November 9th 2013
 
 ## Introduction
 
-You are required to study the topic area given below and then produce a 2000 word report summarizing your findings.
+You are required to study the topic area given below and then produce a 2000 word report summarizing your findings.
 
-Your report should include diagrams and tables to help illustrate the topic where appropriate.
+Your report should include diagrams and tables to help illustrate the topic where appropriate.You are expected to consult text books, the World Wide Web and academic journal papers while investigating the topic.
 
-You are expected to consult text books, the World Wide Web and academic journal papers while investigating the topic. 
+Your report should include references to appropriate sources.
 
-Your report should include references to appropriate sources. The "2000 word" report size is for the main text and does not include the words in the bibliography citing references.
+The "2000 word" report size is for themain text and does not include the words in the bibliography citing references.
 
 ## Topic Area
-Future prospects for high speed mobile Internet access.
+**"Rapid Growth in the number of Top Level Domains in the Domain Name System"You should address whatever issues you deem appropriate."**
 
-You should address whatever technologies you deem appropriate. However, at minimum, your answer should address the technologies itemized below.
+However, at minimum, your answer should addressthe issues itemized below.
 
-* Mobile WiMax-2 (IEEE 802.16m WirelessMAN-Advanced)
-* High-Speed Packet Access (HSPA+)
-* Long Term Evolution (LTE Advanced)
+* To what extent has the Top Level Domain (TLD) of the DNS expanded since 2010 
+* What are the non-technical arguments that have been put forward to support an expansion of the numberof DNS TLDs and what organisations have promoted and indeed opposed this expansion
+* What have been the main technical issues involved in enabling the expansion of the number of DomainName System TLDs and how have these been solved?
 
 ## Initial Bibliography
-As mentioned above, you are expected to read widely in your study of this topic. However, to give you a starting point we draw the following articles to your attention.
+As mentioned above, you are expected to read widely in your study of this topic. However, to give you a startingpoint we draw the following article to your attention.
 
-> Pinoa, Jarno and Pentikousis, Kostas (June 2008) Mobile WiMAXInternet Protocol Journal,11(2).
+Manning, B (December 2011) Challenges to DNS ScalingInternet Protocol Journal,14(4).
 
-> A. Bacioccola, C. Cicconetti, C. Eklund, L. Lenzini, Z. Li, E. Mingozzi, IEEE 802.16: History, Status and Future Trends,Computer Communications, Volume 33(2), February 2010, pp.113-123,
+This is also available at http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_14-4/144_dns.html
 
-> Special issue on WiMAX, LTE, and WiFi interworking,Journal of Computer Systems, Networks, and Communications, Volume 2010 (2010), Article ID 754187.  doi:10.1155/2010/754187
-
-> C. Gabriel, WiMAX opens arms to TD-LTE at last,Rethink Wireless, 31 October, 2012, Online accessed 27th Oct 2012.  http://www.rethink-wireless.com/2012/10/31/wimax-opens-arms-td-lte.htm
+The complete copy of the December 2011 Internet Protocol Journal can be located at http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_14-4/ipj_14-4.pdf and its index is athttp://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_14-4/index.html
 
 ## Effort Allocated to this Assignment
-You are likely to need to spend between sixteen and thirty hours of your time to complete this assignment.1
+You are likely to need to spend between sixteen and thirty hours of your time to complete this assignment.
 
 ## Assessment Criteria
-Bearing in mind that this assignment concerns the study of a technical area and the production of a report, the most appropriate "assessment criteria" are those in Appendix AC of the student handbook, namely those for "Assessment Criteria for Essays".Your work will be assessed on the basis of the following criteria:
+Bearing in mind that this assignment concerns the study of a technical area and the production of a report, the most appropriate "assessment criteria" are those in Appendix AC of the student handbook, namely those for "Assessment Criteria for Essays".
+
+Your work will be assessed on the basis of the following criteria:
 
 * the breadth and depth of relevant knowledge and research that you demonstrate.  Simply regurgitating the material given in lectures will not be enough to gain the pass mark. You are expected to consult other sources;
 * the level of understanding shown;
@@ -73,4 +73,4 @@ Your submission must be a single pdf format file which must be less than 10Mbyt
 
 ## Submission Date
 
-The submission deadline for this assignment is 6pm Monday 7th January 2013.
+The submission deadline for this assignment is before midnight Monday 5th January 2013.

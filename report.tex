@@ -14,6 +14,9 @@
 \usepackage{subcaption}
 
 \newacronym{DNS}{DNS}{Domain Name System}
+\newacronym{IANA}{IANA}{Internet Assigned Numbers Authority}
+\newacronym{ICANN}{ICANN}{Internet Corporation for Assigned Names and Numbers}
+\newacronym{TLD}{TLD}{Top Level Domain}
 
 \newcommand*{\titleGM}{\begingroup
 \hbox{ 
@@ -37,31 +40,53 @@
 \newpage
 
 \section{Introduction}
-% - Introduce domain names
-Domain names map a humanly memorable host name to a less memorable machine IP
-address used to route traffic to that host. \gls{DNS} is a distributed database
-made up of name servers and provides a mapping from domain name to IP address 
-and vice versa.
+% Introduce domain names, the domain name system
+The \gls{DNS} provides a distributed service which maps human readable domain
+names to machine readable IP addresses. Until recently
 
-The lookup process is recursive by nature as the name servers are laid out in a
-tree structure, starting from an unnamed root, each layer of the tree 
-represents each part of the domain name.
+\section{Expansion of TLDs}
+% Increase in new TLDs
+% Unicode in TLDs (Internationalised Domain Names).
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{img/dns-lookup}
-\caption{Example DNS Lookup on \texttt{aber.ac.uk.}}
-\end{figure}
 
-% - Introduce the Domain Name System
-%   - Explain top level domains
+\section{Non-technical Support of the Expansion of TLDs}
+% Industry, product and service domains
+% - self-descriptive domains.
+
+% Non-Latin Script (IDN) and Foreign Language Domains
+% - China, Russia, etc.
+
+% More choice
+% - Initially only around 22 generic TLDs
+% - Overcrowding of .net, .com, .org, etc.
+
+% Localisation
+% - .london
+
+% Segment Focusing
+% - Professionals (.doctor, .med, etc.)
+
+% Increase in innovation and competition.
+
+% Brand Protection
+
+
+
+
+\section{Technical Issues in the Expansion of TLDs}
+% UDP jumbograms or TCP
+% Firewalls
+% Path MTUs
 
 
 \nocite{Manning2011Challenges}
 \nocite{rfc3226}
+\nocite{root2013iana}
+\nocite{berneke2013gtlds}
+\nocite{kaufman2013unicode}
 
 \newpage
-\bibliographystyle{plain}
+\bibliographystyle{IEEEtran}
 \bibliography{citations}
 
 \end{document}

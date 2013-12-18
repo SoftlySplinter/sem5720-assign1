@@ -16,7 +16,10 @@
 \newacronym{DNS}{DNS}{Domain Name System}
 \newacronym{IANA}{IANA}{Internet Assigned Numbers Authority}
 \newacronym{ICANN}{ICANN}{Internet Corporation for Assigned Names and Numbers}
-\newacronym{TLD}{TLD}{Top Level Domain}
+\newacronym{TLD}{TLD}{Top-Level Domain}
+\newacronym{gTLD}{gTLD}{generic Top-Level Domain}
+\newacronym{ccTLD}{ccTLD}{country-code Top-Level Domain}
+\newacronym{ITLD}{ITLD}{Internationalized Top-Level Domain}
 
 \newcommand*{\titleGM}{\begingroup
 \hbox{ 
@@ -40,12 +43,36 @@
 \newpage
 
 \section{Introduction}
-% Introduce domain names, the domain name system
-The \gls{DNS} provides a distributed service which maps human readable domain
-names to machine readable IP addresses. Until recently
+
+In recent years, the number of \gls{TLD} in the \gls{DNS} has been increasing.
+This is, in part, due to the introduction of \gls{ICANN}, the aim of which was
+to promote competition in the registration of domain names.
+
+Before the creation of \gls{ICANN} in 1998 there were a total of eight 
+\gls{gTLD}; \glspl{TLD} which are not specific to a country or the 
+infrastructure of \gls{DNS}. These eight were intended to have specific uses
+(\texttt{com} for commercial entities, \texttt{gov} for government 
+organisations, etc.) but since then a proportion of these have become truly
+generic.
+
+In 2000 and 2004 \gls{ICANN} successfully applied for and instated fifteen new
+\glspl{gTLD} and have since gone on to create a program which reviews all 
+applications for new \glspl{gTLD}\cite{icann2013gtlds}.
+
 
 \section{Expansion of TLDs}
-% Increase in new TLDs
+At time of writing there are a total of 363 \glspl{TLD}, of which 295 are 
+\glspl{ccTLD}, 42 \glspl{gTLD} (three of which are restricted use), 15 sponsored
+\glspl{TLD} and 11 which are used for testing purposes\cite{root2013iana}. 
+
+There are a few factors which have spurred the growth of \glspl{TLD}:
+
+\begin{enumerate}
+\item Introduction of new \glspl{gTLD} by \gls{ICANN}
+\item Support for non-Latin characters in the \gls{DNS}, allowing for 
+      \glspl{ITLD}
+\end{enumerate}
+% Increase in new TLDs (specifically gTLDs)
 % Unicode in TLDs (Internationalised Domain Names).
 
 
@@ -84,6 +111,7 @@ names to machine readable IP addresses. Until recently
 \nocite{root2013iana}
 \nocite{berneke2013gtlds}
 \nocite{kaufman2013unicode}
+\nocite{leiba2009good}
 
 \newpage
 \bibliographystyle{IEEEtran}

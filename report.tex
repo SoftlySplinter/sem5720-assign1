@@ -13,13 +13,14 @@
 \usepackage{caption}
 \usepackage{subcaption}
 
+\newacronym{ccTLD}{ccTLD}{country-code Top-Level Domain}
 \newacronym{DNS}{DNS}{Domain Name System}
+\newacronym{gTLD}{gTLD}{generic Top-Level Domain}
 \newacronym{IANA}{IANA}{Internet Assigned Numbers Authority}
 \newacronym{ICANN}{ICANN}{Internet Corporation for Assigned Names and Numbers}
-\newacronym{TLD}{TLD}{Top-Level Domain}
-\newacronym{gTLD}{gTLD}{generic Top-Level Domain}
-\newacronym{ccTLD}{ccTLD}{country-code Top-Level Domain}
+\newacronym{IDN}{IDN}{Internationalized Domain Name}
 \newacronym{ITLD}{ITLD}{Internationalized Top-Level Domain}
+\newacronym{TLD}{TLD}{Top-Level Domain}
 
 \newcommand*{\titleGM}{\begingroup
 \hbox{ 
@@ -61,19 +62,41 @@ applications for new \glspl{gTLD}\cite{icann2013gtlds}.
 
 
 \section{Expansion of TLDs}
-At time of writing there are a total of 363 \glspl{TLD}, of which 295 are 
-\glspl{ccTLD}, 42 \glspl{gTLD} (three of which are restricted use), 15 sponsored
-\glspl{TLD} and 11 which are used for testing purposes\cite{root2013iana}. 
+At time of writing there are a total of 364 \glspl{TLD}, of which 295 are 
+\glspl{ccTLD}, 42 \glspl{gTLD} (three of which are restricted use), 15 
+sponsored \glspl{TLD}, 11 used for testing and 1 (\texttt{.arpa}) dedicated to 
+the infrastructure for \gls{DNS}\cite{root2013iana}.
 
-There are a few factors which have spurred the growth of \glspl{TLD}:
+There are two factors which have spurred the growth of \glspl{TLD}:
 
 \begin{enumerate}
 \item Introduction of new \glspl{gTLD} by \gls{ICANN}
 \item Support for non-Latin characters in the \gls{DNS}, allowing for 
       \glspl{ITLD}
 \end{enumerate}
-% Increase in new TLDs (specifically gTLDs)
+
+
 % Unicode in TLDs (Internationalised Domain Names).
+Until October 2009\cite{icann2013idns} \glspl{TLD} could only consist of 
+US-ASCII (or ``Latin'') characters. This changed with the approval of the
+``IDN ccTLD Fast Track Process''\cite{icann2013final}, which allows countries 
+to apply for \gls{IDN} \glspl{ccTLD} which represents their specific country 
+(or territory) name in non-Latin script enabling users to access domain names
+in their own language. %TODO this is almost too copypasta'd.
+
+In more recent years, 2011 to be specific, \glspl{IDN} have also been approved 
+for use in \glspl{gTLD}, allowing for a greater degree of freedom in 
+international users.
+
+% Increase in new TLDs (specifically gTLDs)
+In hand with this there has been a fair increase in the number of \glspl{gTLD}
+before 2010 there were only 22 \glspl{gTLD} available. On 12 January 2012,
+applications for new \glspl{gTLD} opened and since then a total of 20 new 
+\glspl{gTLD} have been added, including several \glspl{IDN}.
+
+Even so, this is a drop in the ocean compared to the 1,930 applications 
+\gls{ICANN} received and it is anticipated that the number of \glspl{gTLD} will
+increase further in coming years.
 
 
 \section{Non-technical Support of the Expansion of TLDs}
@@ -98,6 +121,8 @@ There are a few factors which have spurred the growth of \glspl{TLD}:
 % Brand Protection
 
 
+%\nocite{leiba2009good}
+%\nocite{berneke2013gtlds}
 
 
 \section{Technical Issues in the Expansion of TLDs}
@@ -105,13 +130,10 @@ There are a few factors which have spurred the growth of \glspl{TLD}:
 % Firewalls
 % Path MTUs
 
+%\nocite{Manning2011Challenges}
+%\nocite{kaufman2013unicode}
 
-\nocite{Manning2011Challenges}
-\nocite{rfc3226}
-\nocite{root2013iana}
-\nocite{berneke2013gtlds}
-\nocite{kaufman2013unicode}
-\nocite{leiba2009good}
+%\nocite{rfc3226}
 
 \newpage
 \bibliographystyle{IEEEtran}

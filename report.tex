@@ -285,9 +285,17 @@ size in the query/response messages due to the four times increase in number of
 bit required to represent the IP address.
 
 % Problems with Unicode
-% \cite{kaufman2013unicode}
+\subsection{IDNs and Issues with Unicode}
+There is also the question of the safety of using a non-Latin encoding
+(e.g. Unicode) where certain characters may look either very similar or even
+indistinguishable to one another\cite{kaufman2013unicode}. This can lead to the
+spoofing of known domain names which attackers could use for malicious purposes.
 
-%\nocite{rfc3226}
+Of course, the registration of \glspl{IDN} at the root zone is restricted to
+prevent this\cite{icann2011idns}, but that has not meant that the implementation of \glspl{IDN} has
+not caused issues with other areas involving non-Latin encoding, The Homograph 
+Attack\cite{gabrilovich2002homograph}, for example.
+
 
 \newpage
 \bibliographystyle{IEEEtran}

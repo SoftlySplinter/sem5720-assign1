@@ -23,6 +23,7 @@
 \newacronym{ITLD}{ITLD}{Internationalized Top-Level Domain}
 \newacronym{TCP}{TCP}{Transmission Control Protocol}
 \newacronym{TLD}{TLD}{Top-Level Domain}
+\newacronym{TTL}{TTL}{Time To Live}
 \newacronym{SEO}{SEO}{Search Engine Optimisation}
 \newacronym{UDP}{UDP}{User Datagram Protocol}
 
@@ -201,10 +202,11 @@ going to be many more root zone entries and this increase is happening quite
 quickly.
 
 Not only are there going to be more \glspl{TLD} required, additional factors
-like the new IPv6 protocol and the need for security in \gls{DNS} through
-\gls{DNSSEC}\cite{rfc2535}. All these factors combined means that the size of
-a \gls{DNS} query or response may not fit inside a 512 byte \gls{UDP} packet
-\gls{DNS} was initially intended to handle.
+like the new IPv6 protocol (discussed in subsection~\ref{subsec:dnsipv6}) and 
+the need for security in \gls{DNS} through \gls{DNSSEC}\cite{rfc2535} 
+(discussed in subsection~\ref{subsec:dnssec}). All these factors combined means
+that the size of a \gls{DNS} query or response may not fit inside a 512 byte 
+\gls{UDP} packet \gls{DNS} was initially intended to handle.
 
 % UDP jumbograms or TCP
 There are several options to cope with this; one approach would be to send a
@@ -213,14 +215,35 @@ handle the sending of packets which are larger than 512 bytes. \gls{DNS} itself
 is able to handle both of these options, but neither are particularly desirable
 options.
 
+% Firewalls
+% Path MTUs
+
+\subsection{DNS Security}
+\label{subsec:dnssec}
+% Explain DNSSEC
+In recent years, the need for security in the \gls{DNS} has become apparent, 
+simple attacks like \gls{DNS} Spoofing, where the response from a \gls{DNS}
+query is not for the correct server, but instead for a different server, 
+typically the attackers. One method of doing this is \gls{DNS} Cache 
+Poisoning\cite{davies2008cache}, where the principal of saving lookup time by
+caching results leads to the wrong result being cached for as long as the 
+\gls{TTL} of the cache. This even affected servers from the root zones when a
+name server provides both an authoritative and recursive name service, where an
+attack on the recursive side would lead to bad data given to computers wanting 
+an authoritative answer; the net result of which is that one could insert or
+modify domain data inside a \gls{TLD}. %TODO way too copypasta'd
+
+The formal solution to this is to introduce security to the \gls{DNS} through
+public key cryptography to sign the responses given by the recursive \gls{DNS}
+lookup, allowing the response to be verified by the client. \Gls{DNSSEC} is the
+mechanism used to perform this process.
+
+\subsection{DNS Support for IPv6}
+\label{subsec:dnsipv6}
 % Explain IPv6
 
-% Explain DNSSEC
-
-% Firewalls
 
 
-% Path MTUs
 
 % Problems with Unicode
 % \cite{kaufman2013unicode}

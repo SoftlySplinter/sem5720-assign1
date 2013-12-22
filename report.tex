@@ -67,6 +67,7 @@ In 2000 and 2004 \gls{ICANN} successfully applied for and instated fifteen new
 applications for new \glspl{gTLD}\cite{icann2013gtlds}.
 
 
+\newpage
 \section{Expansion of TLDs}
 
 At time of writing there are a total of 364 \glspl{TLD}, of which 295 are 
@@ -106,6 +107,7 @@ Even so, this is a drop in the ocean compared to the 1,930 applications
 increase further in coming years.
 
 
+\newpage
 \section{Non-technical Support of the Expansion of TLDs}
 
 There is much support in favour of the expansion of \glspl{TLD}, much of which
@@ -185,6 +187,7 @@ may not be effective as hypothesised.
 % TODO If there's time
 
 
+\newpage
 \section{Technical Issues in the Expansion of TLDs}
 
 There have not been many technical issues with the root zone of \gls{DNS} until
@@ -226,6 +229,22 @@ connection in \gls{TCP} and also in terms of network traffic for the three-way
 handshake and for acknowledging received packets.
 
 % Firewalls
+% TODO should be explaining, not quoting really.
+Both these methods bring about problems when encountering firewalls. An 
+incorrectly configured firewall might be set to not accept \gls{DNS} packets
+with a size greater than 512 bytes via \gls{UDP} (the National Institute of Standards and 
+Technology estimate that \gls{DNSSEC} will increase the \gls{DNS} response size
+to be \textit{at least} 2048 bytes), so a response from a \gls{DNSSEC} signed 
+response would be dropped by the firewall.
+
+Another exchange would happen, with the resolve implicitly stating a buffer 
+size of 512 bytes, but as the response cannot be reduced to this size, the root
+server would fragment the response into this size and set both the fragmented 
+and truncated flags, to encourage resolver to retry with \gls{TCP}.
+
+The worst case outcome from this is that the misconfigured firewall would also
+drop a \gls{TCP} \gls{DNS} packet and query would remain unresolved signed
+\gls{DNS} responses and will have caused a lot of traffic on the network.
 
 
 % Path MTUs
@@ -254,8 +273,16 @@ mechanism used to perform this process.
 \label{subsec:dnsipv6}
 % Explain IPv6
 
+The \gls{DNS} cannot be easily extended to support IPv6 addresses, since it is
+assumed by clients that a 32-bit IPv4 address will be returned and not a 128-bit
+IPv6 address.
 
+A new resource record was implemented in \gls{DNS} to accommodate IPv6 
+addresses, the AAAA record, by RFC3596\cite{rfc3596}.
 
+The main issue brought about by these changes in \gls{DNS} is the increase of
+size in the query/response messages due to the four times increase in number of
+bit required to represent the IP address.
 
 % Problems with Unicode
 % \cite{kaufman2013unicode}

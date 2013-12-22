@@ -15,13 +15,16 @@
 
 \newacronym{ccTLD}{ccTLD}{country-code Top-Level Domain}
 \newacronym{DNS}{DNS}{Domain Name System}
+\newacronym{DNSSEC}{DNSSEC}{Domain Name System Security Extensions}
 \newacronym{gTLD}{gTLD}{generic Top-Level Domain}
 \newacronym{IANA}{IANA}{Internet Assigned Numbers Authority}
 \newacronym{ICANN}{ICANN}{Internet Corporation for Assigned Names and Numbers}
 \newacronym{IDN}{IDN}{Internationalized Domain Name}
 \newacronym{ITLD}{ITLD}{Internationalized Top-Level Domain}
+\newacronym{TCP}{TCP}{Transmission Control Protocol}
 \newacronym{TLD}{TLD}{Top-Level Domain}
 \newacronym{SEO}{SEO}{Search Engine Optimisation}
+\newacronym{UDP}{UDP}{User Datagram Protocol}
 
 \newcommand*{\titleGM}{\begingroup
 \hbox{ 
@@ -174,18 +177,53 @@ how the internet really works in the general population that these \glspl{gTLD}
 may not be effective as hypothesised.
 
 % Increase in innovation and competition.
-
+% TODO If there's time and space
 
 % Brand Protection
+% TODO If there's time
 
 
 \section{Technical Issues in the Expansion of TLDs}
+
+There have not been many technical issues with the root zone of \gls{DNS} until
+fairly recently; two factors had helped in the stabalisation of 
+this\cite{manning2011challenges}:
+
+\begin{enumerate}
+\item There were a fairly small number of \glspl{TLD}, allowing the size of the
+      root to be around 80,000 bytes.
+\item \glspl{TLD} were absorbed very slowly into the root zone and these
+      changes were relatively small.
+\end{enumerate}
+
+Now, with the introduction of new \glspl{gTLD} and \glspl{ITLD}, there are 
+going to be many more root zone entries and this increase is happening quite
+quickly.
+
+Not only are there going to be more \glspl{TLD} required, additional factors
+like the new IPv6 protocol and the need for security in \gls{DNS} through
+\gls{DNSSEC}\cite{rfc2535}. All these factors combined means that the size of
+a \gls{DNS} query or response may not fit inside a 512 byte \gls{UDP} packet
+\gls{DNS} was initially intended to handle.
+
 % UDP jumbograms or TCP
+There are several options to cope with this; one approach would be to send a
+\gls{UDP} packet greater than 512 bytes, another would be to use \gls{TCP} to
+handle the sending of packets which are larger than 512 bytes. \gls{DNS} itself
+is able to handle both of these options, but neither are particularly desirable
+options.
+
+% Explain IPv6
+
+% Explain DNSSEC
+
 % Firewalls
+
+
 % Path MTUs
 
-%\nocite{Manning2011Challenges}
-%\nocite{kaufman2013unicode}
+% Problems with Unicode
+% \cite{kaufman2013unicode}
 
 %\nocite{rfc3226}
 

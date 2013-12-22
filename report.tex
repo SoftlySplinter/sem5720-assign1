@@ -21,6 +21,7 @@
 \newacronym{ICANN}{ICANN}{Internet Corporation for Assigned Names and Numbers}
 \newacronym{IDN}{IDN}{Internationalized Domain Name}
 \newacronym{ITLD}{ITLD}{Internationalized Top-Level Domain}
+\newacronym{MTU}{MTU}{Maximum Transmission Unit}
 \newacronym{TCP}{TCP}{Transmission Control Protocol}
 \newacronym{TLD}{TLD}{Top-Level Domain}
 \newacronym{TTL}{TTL}{Time To Live}
@@ -215,7 +216,18 @@ handle the sending of packets which are larger than 512 bytes. \gls{DNS} itself
 is able to handle both of these options, but neither are particularly desirable
 options.
 
+Sending large \gls{UDP} packets over a network may run into the problem of 
+requiring fragmentation if size of the path \gls{MTU} is less than the size of
+the packet needing to be sent.
+
+The other option, using \gls{TCP}, has a large amount of overhead involved, 
+both in terms of packet size in adding the information required to perform a
+connection in \gls{TCP} and also in terms of network traffic for the three-way 
+handshake and for acknowledging received packets.
+
 % Firewalls
+
+
 % Path MTUs
 
 \subsection{DNS Security}

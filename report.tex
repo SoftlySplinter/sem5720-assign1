@@ -20,13 +20,17 @@
 \newacronym{IANA}{IANA}{Internet Assigned Numbers Authority}
 \newacronym{ICANN}{ICANN}{Internet Corporation for Assigned Names and Numbers}
 \newacronym{IDN}{IDN}{Internationalized Domain Name}
+\newacronym{ISP}{ISP}{Internet Service Provider}
 \newacronym{ITLD}{ITLD}{Internationalized Top-Level Domain}
 \newacronym{MTU}{MTU}{Maximum Transmission Unit}
 \newacronym{TCP}{TCP}{Transmission Control Protocol}
 \newacronym{TLD}{TLD}{Top-Level Domain}
+\newacronym{TLS}{TLS}{Transport Layer Security}
 \newacronym{TTL}{TTL}{Time To Live}
 \newacronym{SEO}{SEO}{Search Engine Optimisation}
 \newacronym{UDP}{UDP}{User Datagram Protocol}
+\newacronym{URL}{URL}{Univerisal Resorce Locator}
+\newacronym{QRCode}{QR Code}{Quick Resoponse Code}
 
 \newcommand*{\titleGM}{\begingroup
 \hbox{ 
@@ -163,7 +167,8 @@ will encapsulate more specific geolocation through city information with
 restrictions on this would have to be fairly tight and it may be almost 
 impossible to police. Search engines are therefore likely to take the
 \gls{TLD} information with a pinch of salt, but it may open up the market for
-products relating to country information, Cologne for example.
+products relating to country information, cologne, for example, could be used
+for the advertisement of fragrances.
 
 % Segment Focusing
 % - Professionals (.doctor, .med, etc.)
@@ -191,7 +196,7 @@ may not be effective as hypothesised.
 \section{Technical Issues in the Expansion of TLDs}
 
 There have not been many technical issues with the root zone of \gls{DNS} until
-fairly recently; two factors had helped in the stabalisation of 
+fairly recently; two factors had helped in the stabilisation of 
 this\cite{manning2011challenges}:
 
 \begin{enumerate}
@@ -229,7 +234,6 @@ connection in \gls{TCP} and also in terms of network traffic for the three-way
 handshake and for acknowledging received packets.
 
 % Firewalls
-% TODO should be explaining, not quoting really.
 Both these methods bring about problems when encountering firewalls. An 
 incorrectly configured firewall might be set to not accept \gls{DNS} packets
 with a size greater than 512 bytes via \gls{UDP} (the National Institute of Standards and 
@@ -237,17 +241,25 @@ Technology estimate that \gls{DNSSEC} will increase the \gls{DNS} response size
 to be \textit{at least} 2048 bytes), so a response from a \gls{DNSSEC} signed 
 response would be dropped by the firewall.
 
-Another exchange would happen, with the resolve implicitly stating a buffer 
-size of 512 bytes, but as the response cannot be reduced to this size, the root
-server would fragment the response into this size and set both the fragmented 
-and truncated flags, to encourage resolver to retry with \gls{TCP}.
-
-The worst case outcome from this is that the misconfigured firewall would also
-drop a \gls{TCP} \gls{DNS} packet and query would remain unresolved signed
-\gls{DNS} responses and will have caused a lot of traffic on the network.
+An incorrectly firewall would likely drop \gls{DNS} traffic sent using
+\gls{TCP}, the alternative for sending larger \gls{DNS} messages. This means
+that the potential worst-case scenario is that \gls{DNS} traffic signed using
+\gls{DNSSEC} would not be resolved at all and it would fall back to using 
+unsigned \gls{DNS} messages, but having caused a lot of traffic on the network.
 
 
 % Path MTUs
+The other problem comes with the path \gls{MTU} size. The guidelines for using
+\gls{DNSSEC} state that the client must be able to accept \gls{DNS} messages of
+at least 2048 bytes, the \gls{MTU} size of the path these packets would have to
+traverse may be limited to a smaller amount, requiring the packets to be 
+fragmented, which may lead to data loss and redundant retransmission, or for 
+\gls{TCP} to be considered, with all of its overheads.
+
+This may become less of a problem as the \gls{MTU} size increases as networks
+are improved with modern technology, such as fibre optics. But the path 
+\gls{MTU} is limited by the weakest link in the chain so this may remain a
+problem for many years to come.
 
 \subsection{DNS Security}
 \label{subsec:dnssec}
@@ -258,7 +270,9 @@ query is not for the correct server, but instead for a different server,
 typically the attackers. One method of doing this is \gls{DNS} Cache 
 Poisoning\cite{davies2008cache}, where the principal of saving lookup time by
 caching results leads to the wrong result being cached for as long as the 
-\gls{TTL} of the cache. This even affected servers from the root zones when a
+\gls{TTL} of the cache. 
+
+This can even affect servers from the root zones when a
 name server provides both an authoritative and recursive name service, where an
 attack on the recursive side would lead to bad data given to computers wanting 
 an authoritative answer; the net result of which is that one could insert or
@@ -268,6 +282,12 @@ The formal solution to this is to introduce security to the \gls{DNS} through
 public key cryptography to sign the responses given by the recursive \gls{DNS}
 lookup, allowing the response to be verified by the client. \Gls{DNSSEC} is the
 mechanism used to perform this process.
+
+The main issue with \gls{DNSSEC} is that it is a complex system which requires
+a decent level of expertise to set up and is only applicable to a fairly small
+proportion of businesses. This, combined with a lack of application support for
+\gls{DNSSEC} means that, at the moment at least, the reward for implementing
+\gls{DNSSEC} is often not worth the risk\cite{rasmussen2011risk}.
 
 \subsection{DNS Support for IPv6}
 \label{subsec:dnsipv6}
@@ -296,6 +316,43 @@ prevent this\cite{icann2011idns}, but that has not meant that the implementation
 not caused issues with other areas involving non-Latin encoding, The Homograph 
 Attack\cite{gabrilovich2002homograph}, for example.
 
+
+\newpage
+\section{Evaluation}
+
+It is obvious that the need for new \glspl{TLD} is an important step; however, 
+it seems like a step that has taken far too long to put into place. A lot of
+arguments are now made that the use of search engines has deprecated the need
+for a truly memorable \gls{URL}, let alone a \gls{TLD} and whilst the reserved
+\gls{TLD} for government and educational purposes do make these institutions
+easily recognisable and verifiable, the levels of information the proposed 
+\glspl{gTLD} could offer seem too detailed and too difficult to police for the
+little information they would provide to the user.
+
+Another argument one could make against the new \glspl{TLD} is that sites 
+providing \gls{URL} shortening or technologies such as \glspl{QRCode} are now
+more popular methods of sharing location information more memorably and would
+seem to have sprung up as a way around the lack of domains available.
+
+The need for technologies like \gls{DNSSEC} should be obvious to all users, but
+when different technologies like \gls{TLS} also provide a similar service, with
+a lot of added benefits, publicity and only when required, one does wonder 
+whether the need for it is quite so pressing, especially given the overhead that
+would be added by \gls{DNSSEC} especially if a lot of users have incorrectly
+configured firewalls, ones on a router provided by their \glspl{ISP} for 
+example.
+
+Of course, \gls{DNSSEC} is at least an automatic process where domain names 
+which do not match the signature would be heralded with a large warning from
+the browser, whilst technologies like \gls{TLS} are not guaranteed to, or might
+be used where users might assume it is (e.g. spoof websites using HTTP rather 
+than HTTPS would not show any warning).
+
+\gls{DNS} support for IPv6 is already fairly good and even though it does 
+increase the packet size, it is necessary step to help the widespread
+adoption of IPv6. One might tentatively predict that the packet size might be
+able to become somewhat smaller once IPv4 becomes less prevalent, but it would
+undoubtedly be many years before this happens.
 
 \newpage
 \bibliographystyle{IEEEtran}

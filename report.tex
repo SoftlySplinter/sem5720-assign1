@@ -1,0 +1,361 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[section]{placeins}
+\usepackage{paralist}
+\usepackage{fullpage}
+\usepackage{glossaries}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\newacronym{ccTLD}{ccTLD}{country-code Top-Level Domain}
+\newacronym{DNS}{DNS}{Domain Name System}
+\newacronym{DNSSEC}{DNSSEC}{Domain Name System Security Extensions}
+\newacronym{gTLD}{gTLD}{generic Top-Level Domain}
+\newacronym{IANA}{IANA}{Internet Assigned Numbers Authority}
+\newacronym{ICANN}{ICANN}{Internet Corporation for Assigned Names and Numbers}
+\newacronym{IDN}{IDN}{Internationalized Domain Name}
+\newacronym{ISP}{ISP}{Internet Service Provider}
+\newacronym{ITLD}{ITLD}{Internationalized Top-Level Domain}
+\newacronym{MTU}{MTU}{Maximum Transmission Unit}
+\newacronym{TCP}{TCP}{Transmission Control Protocol}
+\newacronym{TLD}{TLD}{Top-Level Domain}
+\newacronym{TLS}{TLS}{Transport Layer Security}
+\newacronym{TTL}{TTL}{Time To Live}
+\newacronym{SEO}{SEO}{Search Engine Optimisation}
+\newacronym{UDP}{UDP}{User Datagram Protocol}
+\newacronym{URL}{URL}{Univerisal Resorce Locator}
+\newacronym{QRCode}{QR Code}{Quick Resoponse Code}
+
+\newcommand*{\titleGM}{\begingroup
+\hbox{ 
+\hspace*{0.2\textwidth} 
+\rule{1pt}{\textheight} 
+\hspace*{0.05\textwidth} 
+\parbox[b]{0.75\textwidth}{ 
+
+{\noindent\Huge\bfseries Rapid Growth in Top Level Domains in the Domain Name System}\\[2\baselineskip] % Title
+{\large \textit{SEM5720 - Assignment 1}}\\[4\baselineskip] % Tagline or further description
+{\Large \textsc{Alexander D Brown (adb9)}} % Author name
+
+\vspace{0.5\textheight} 
+}}
+\endgroup}
+
+
+\begin{document}
+\titleGM 
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+In recent years, the number of \gls{TLD} in the \gls{DNS} has been increasing.
+This is, in part, due to the introduction of \gls{ICANN}, the aim of which was
+to promote competition in the registration of domain names.
+
+Before the creation of \gls{ICANN} in 1998 there were a total of eight 
+\gls{gTLD}; \glspl{TLD} which are not specific to a country or the 
+infrastructure of \gls{DNS}. These eight were intended to have specific uses
+(\texttt{com} for commercial entities, \texttt{gov} for government 
+organisations, etc.) but since then a proportion of these have become truly
+generic.
+
+In 2000 and 2004 \gls{ICANN} successfully applied for and instated fifteen new
+\glspl{gTLD} and have since gone on to create a program which reviews all 
+applications for new \glspl{gTLD}\cite{icann2013gtlds}.
+
+
+\newpage
+\section{Expansion of TLDs}
+
+At time of writing there are a total of 364 \glspl{TLD}, of which 295 are 
+\glspl{ccTLD}, 42 \glspl{gTLD} (3 of which are restricted use), 15 
+sponsored \glspl{TLD}, 11 used for testing and 1 (\texttt{.arpa}) dedicated to 
+the infrastructure for \gls{DNS}\cite{root2013iana}.
+
+There are two factors which have spurred the growth of \glspl{TLD}:
+
+\begin{enumerate}
+\item Introduction of new \glspl{gTLD} by \gls{ICANN}
+\item Support for non-Latin characters in the \gls{DNS}, allowing for 
+      \glspl{ITLD}
+\end{enumerate}
+
+
+% Unicode in TLDs (Internationalised Domain Names).
+Until October 2009\cite{icann2013idns} \glspl{TLD} could only consist of 
+US-ASCII (or ``Latin'') characters. This changed with the approval of the
+``IDN ccTLD Fast Track Process''\cite{icann2013final}, which allows countries 
+to apply for \gls{IDN} \glspl{ccTLD} which represents their specific country 
+(or territory) name in non-Latin script enabling users to access domain names
+in their own language. %TODO this is almost too copypasta'd.
+
+In more recent years, 2011 to be specific, \glspl{IDN} have also been approved 
+for use in \glspl{gTLD}, allowing for a greater degree of freedom in 
+international users.
+
+% Increase in new TLDs (specifically gTLDs)
+In hand with this there has been a fair increase in the number of \glspl{gTLD}
+before 2010 there were only 22 \glspl{gTLD} available. On 12 January 2012,
+applications for new \glspl{gTLD} opened and since then a total of 20 new 
+\glspl{gTLD} have been added, including several \glspl{IDN}.
+
+Even so, this is a drop in the ocean compared to the 1,930 applications 
+\gls{ICANN} received and it is anticipated that the number of \glspl{gTLD} will
+increase further in coming years.
+
+
+\newpage
+\section{Non-technical Support of the Expansion of TLDs}
+
+There is much support in favour of the expansion of \glspl{TLD}, much of which
+is non-technical, especially in marketing and branding. The ability to have 
+self-descriptive domain names is obviously appealing to businesses, especially
+those with well known trademarks.
+
+% Industry, product and service domains
+% - self-descriptive domains.
+Berneke\cite{berneke2013gtlds} gives ten reasons as to why \glspl{gTLD} are important
+to businesses, explaining the notable factors such as the ability to have 
+self-descriptive domains which clearly identify the area of a business.
+
+There is the counter argument that \glspl{TLD} are becoming 
+obsolete\cite{leiba2009good}, tools like search engines and increasingly
+``intelligent'' web browsers are reducing the need for domain names. Though
+this is obviously true, there is still a need for a human-readable name to 
+access websites; the machine-readable IP addresses are not memorable, or short,
+enough to easily distribute. Domain names also play a significant part in 
+\gls{SEO}, although according to Google experts, the new \glspl{gTLD} will not
+have any kind of preference over existing \glspl{TLD}\cite{cutts2012google}.
+
+% Non-Latin Script (IDN) and Foreign Language Domains
+% - China, Russia, etc.
+Another important factor Berneke details the ability to target a international
+demographic through the new non-Latin \glspl{IDN}. For those demographics which
+use a non-Latin script, this is a vital element to reach the whole of the
+target market.
+
+% More choice
+% - Initially only around 22 generic TLDs
+% - Overcrowding of .net, .com, .org, etc.
+With the addition of new \glspl{TLD} comes with a greater range of choice of
+domain names. Before this there were only 22 \glspl{gTLD} and many of these are
+restricted to specific institutions and organisations, leaving only a handful 
+of domains remaining for non-\glspl{ccTLD} domains.
+
+This has led to the overcrowding of the more popular \glspl{gTLD}; \texttt{.com},
+\texttt{.org} and \texttt{.net} which has, in turn, ensured that desirable 
+domains are either sparsely available or expensive to purchase. The arrival of
+these new \glspl{gTLD} is expected to alleviate at least some of this 
+overcrowding, but the author expects that the popular domains will still suffer
+from this as entrepreneurial people snap up these domains at a cheap price and
+sell them when the market prices are higher.
+
+% Localisation
+% - .london
+A lot of major search engines are now placing increasing importance of 
+geolocation\cite{linkdex2012georanking} and although a lot of this can be
+expressed through \glspl{ccTLD} there are some proposed \glspl{gTLD} which
+will encapsulate more specific geolocation through city information with 
+\glspl{TLD} such as \texttt{.london} or \texttt{.nyc}. Of course the 
+restrictions on this would have to be fairly tight and it may be almost 
+impossible to police. Search engines are therefore likely to take the
+\gls{TLD} information with a pinch of salt, but it may open up the market for
+products relating to country information, cologne, for example, could be used
+for the advertisement of fragrances.
+
+% Segment Focusing
+% - Professionals (.doctor, .med, etc.)
+In hand with this, the ability to register a \gls{TLD} for a professional
+career, a doctor for example, seems like a ideal way of stopping false 
+advertising. These could prove to be easier to police, but again there is no
+guarantee that a person owning a domain with the \gls{TLD} \texttt{.doctor} is
+indeed a doctor.
+
+For businesses that can help perform segment focusing, isolating the target
+demographics to those \glspl{TLD} which appeal to them, be it art or football.
+
+Even with this, there is already a lot of misinformation and ignorance as to
+how the internet really works in the general population that these \glspl{gTLD}
+may not be effective as hypothesised.
+
+% Increase in innovation and competition.
+% TODO If there's time and space
+
+% Brand Protection
+% TODO If there's time
+
+
+\newpage
+\section{Technical Issues in the Expansion of TLDs}
+
+There have not been many technical issues with the root zone of \gls{DNS} until
+fairly recently; two factors had helped in the stabilisation of 
+this\cite{manning2011challenges}:
+
+\begin{enumerate}
+\item There were a fairly small number of \glspl{TLD}, allowing the size of the
+      root to be around 80,000 bytes.
+\item \glspl{TLD} were absorbed very slowly into the root zone and these
+      changes were relatively small.
+\end{enumerate}
+
+Now, with the introduction of new \glspl{gTLD} and \glspl{ITLD}, there are 
+going to be many more root zone entries and this increase is happening quite
+quickly.
+
+Not only are there going to be more \glspl{TLD} required, additional factors
+like the new IPv6 protocol (discussed in subsection~\ref{subsec:dnsipv6}) and 
+the need for security in \gls{DNS} through \gls{DNSSEC}\cite{rfc2535} 
+(discussed in subsection~\ref{subsec:dnssec}). All these factors combined means
+that the size of a \gls{DNS} query or response may not fit inside a 512 byte 
+\gls{UDP} packet \gls{DNS} was initially intended to handle.
+
+% UDP jumbograms or TCP
+There are several options to cope with this; one approach would be to send a
+\gls{UDP} packet greater than 512 bytes, another would be to use \gls{TCP} to
+handle the sending of packets which are larger than 512 bytes. \gls{DNS} itself
+is able to handle both of these options, but neither are particularly desirable
+options.
+
+Sending large \gls{UDP} packets over a network may run into the problem of 
+requiring fragmentation if size of the path \gls{MTU} is less than the size of
+the packet needing to be sent.
+
+The other option, using \gls{TCP}, has a large amount of overhead involved, 
+both in terms of packet size in adding the information required to perform a
+connection in \gls{TCP} and also in terms of network traffic for the three-way 
+handshake and for acknowledging received packets.
+
+% Firewalls
+Both these methods bring about problems when encountering firewalls. An 
+incorrectly configured firewall might be set to not accept \gls{DNS} packets
+with a size greater than 512 bytes via \gls{UDP} (the National Institute of Standards and 
+Technology estimate that \gls{DNSSEC} will increase the \gls{DNS} response size
+to be \textit{at least} 2048 bytes), so a response from a \gls{DNSSEC} signed 
+response would be dropped by the firewall.
+
+An incorrectly firewall would likely drop \gls{DNS} traffic sent using
+\gls{TCP}, the alternative for sending larger \gls{DNS} messages. This means
+that the potential worst-case scenario is that \gls{DNS} traffic signed using
+\gls{DNSSEC} would not be resolved at all and it would fall back to using 
+unsigned \gls{DNS} messages, but having caused a lot of traffic on the network.
+
+
+% Path MTUs
+The other problem comes with the path \gls{MTU} size. The guidelines for using
+\gls{DNSSEC} state that the client must be able to accept \gls{DNS} messages of
+at least 2048 bytes, the \gls{MTU} size of the path these packets would have to
+traverse may be limited to a smaller amount, requiring the packets to be 
+fragmented, which may lead to data loss and redundant retransmission, or for 
+\gls{TCP} to be considered, with all of its overheads.
+
+This may become less of a problem as the \gls{MTU} size increases as networks
+are improved with modern technology, such as fibre optics. But the path 
+\gls{MTU} is limited by the weakest link in the chain so this may remain a
+problem for many years to come.
+
+\subsection{DNS Security}
+\label{subsec:dnssec}
+% Explain DNSSEC
+In recent years, the need for security in the \gls{DNS} has become apparent, 
+simple attacks like \gls{DNS} Spoofing, where the response from a \gls{DNS}
+query is not for the correct server, but instead for a different server, 
+typically the attackers. One method of doing this is \gls{DNS} Cache 
+Poisoning\cite{davies2008cache}, where the principal of saving lookup time by
+caching results leads to the wrong result being cached for as long as the 
+\gls{TTL} of the cache. 
+
+This can even affect servers from the root zones when a
+name server provides both an authoritative and recursive name service, where an
+attack on the recursive side would lead to bad data given to computers wanting 
+an authoritative answer; the net result of which is that one could insert or
+modify domain data inside a \gls{TLD}. %TODO way too copypasta'd
+
+The formal solution to this is to introduce security to the \gls{DNS} through
+public key cryptography to sign the responses given by the recursive \gls{DNS}
+lookup, allowing the response to be verified by the client. \Gls{DNSSEC} is the
+mechanism used to perform this process.
+
+The main issue with \gls{DNSSEC} is that it is a complex system which requires
+a decent level of expertise to set up and is only applicable to a fairly small
+proportion of businesses. This, combined with a lack of application support for
+\gls{DNSSEC} means that, at the moment at least, the reward for implementing
+\gls{DNSSEC} is often not worth the risk\cite{rasmussen2011risk}.
+
+\subsection{DNS Support for IPv6}
+\label{subsec:dnsipv6}
+% Explain IPv6
+
+The \gls{DNS} cannot be easily extended to support IPv6 addresses, since it is
+assumed by clients that a 32-bit IPv4 address will be returned and not a 128-bit
+IPv6 address.
+
+A new resource record was implemented in \gls{DNS} to accommodate IPv6 
+addresses, the AAAA record, by RFC3596\cite{rfc3596}.
+
+The main issue brought about by these changes in \gls{DNS} is the increase of
+size in the query/response messages due to the four times increase in number of
+bit required to represent the IP address.
+
+% Problems with Unicode
+\subsection{IDNs and Issues with Unicode}
+There is also the question of the safety of using a non-Latin encoding
+(e.g. Unicode) where certain characters may look either very similar or even
+indistinguishable to one another\cite{kaufman2013unicode}. This can lead to the
+spoofing of known domain names which attackers could use for malicious purposes.
+
+Of course, the registration of \glspl{IDN} at the root zone is restricted to
+prevent this\cite{icann2011idns}, but that has not meant that the implementation of \glspl{IDN} has
+not caused issues with other areas involving non-Latin encoding, The Homograph 
+Attack\cite{gabrilovich2002homograph}, for example.
+
+
+\newpage
+\section{Evaluation}
+
+It is obvious that the need for new \glspl{TLD} is an important step; however, 
+it seems like a step that has taken far too long to put into place. A lot of
+arguments are now made that the use of search engines has deprecated the need
+for a truly memorable \gls{URL}, let alone a \gls{TLD} and whilst the reserved
+\gls{TLD} for government and educational purposes do make these institutions
+easily recognisable and verifiable, the levels of information the proposed 
+\glspl{gTLD} could offer seem too detailed and too difficult to police for the
+little information they would provide to the user.
+
+Another argument one could make against the new \glspl{TLD} is that sites 
+providing \gls{URL} shortening or technologies such as \glspl{QRCode} are now
+more popular methods of sharing location information more memorably and would
+seem to have sprung up as a way around the lack of domains available.
+
+The need for technologies like \gls{DNSSEC} should be obvious to all users, but
+when different technologies like \gls{TLS} also provide a similar service, with
+a lot of added benefits, publicity and only when required, one does wonder 
+whether the need for it is quite so pressing, especially given the overhead that
+would be added by \gls{DNSSEC} especially if a lot of users have incorrectly
+configured firewalls, ones on a router provided by their \glspl{ISP} for 
+example.
+
+Of course, \gls{DNSSEC} is at least an automatic process where domain names 
+which do not match the signature would be heralded with a large warning from
+the browser, whilst technologies like \gls{TLS} are not guaranteed to, or might
+be used where users might assume it is (e.g. spoof websites using HTTP rather 
+than HTTPS would not show any warning).
+
+\gls{DNS} support for IPv6 is already fairly good and even though it does 
+increase the packet size, it is necessary step to help the widespread
+adoption of IPv6. One might tentatively predict that the packet size might be
+able to become somewhat smaller once IPv4 becomes less prevalent, but it would
+undoubtedly be many years before this happens.
+
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{citations}
+
+\end{document}

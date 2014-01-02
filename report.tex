@@ -92,9 +92,8 @@ There are two factors which have spurred the growth of \glspl{TLD}:
 Until October 2009\cite{icann2013idns} \glspl{TLD} could only consist of 
 US-ASCII (or ``Latin'') characters. This changed with the approval of the
 ``IDN ccTLD Fast Track Process''\cite{icann2013final}, which allows countries 
-to apply for \gls{IDN} \glspl{ccTLD} which represents their specific country 
-(or territory) name in non-Latin script enabling users to access domain names
-in their own language. %TODO this is almost too copypasta'd.
+to apply for \gls{IDN} \glspl{ccTLD} allowing users to access domains in their
+own language or script. 
 
 In more recent years, 2011 to be specific, \glspl{IDN} have also been approved 
 for use in \glspl{gTLD}, allowing for a greater degree of freedom in 
@@ -185,12 +184,6 @@ Even with this, there is already a lot of misinformation and ignorance as to
 how the internet really works in the general population that these \glspl{gTLD}
 may not be effective as hypothesised.
 
-% Increase in innovation and competition.
-% TODO If there's time and space
-
-% Brand Protection
-% TODO If there's time
-
 
 \newpage
 \section{Technical Issues in the Expansion of TLDs}
@@ -272,11 +265,10 @@ Poisoning\cite{davies2008cache}, where the principal of saving lookup time by
 caching results leads to the wrong result being cached for as long as the 
 \gls{TTL} of the cache. 
 
-This can even affect servers from the root zones when a
-name server provides both an authoritative and recursive name service, where an
-attack on the recursive side would lead to bad data given to computers wanting 
-an authoritative answer; the net result of which is that one could insert or
-modify domain data inside a \gls{TLD}. %TODO way too copypasta'd
+This can even affect servers from the root zones when a name server provides 
+both an authoritative and recursive name service. An attack on the recursive
+side could lead to an authoritative answer being given based on bad data. This
+can even lead to insertions or modification of domain data inside a \gls{TLD}.
 
 The formal solution to this is to introduce security to the \gls{DNS} through
 public key cryptography to sign the responses given by the recursive \gls{DNS}
